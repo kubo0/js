@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="pokazTekst()">Pokaż tekst</button>
+    <p id="tekst"></p>
+    <button onclick="przelaczObraz()">Pokaż / ukryj obraz</button>
+    <img id="obraz" src="https://picsum.photos/200/300">
+    
+    <script>
+        console.log("hello panie");
+        function pokazTekst() {
+            document.getElementById('tekst').innerHTML = "To będzie teraz w akapicie";
+        }
+
+        function przelaczObraz() {
+            if(document.getElementById('obraz').style.display == "block")
+                document.getElementById('obraz').style.display = "none";
+            else
+                document.getElementById('obraz').style.display = "block";
+        }
+    </script>
+</body>
+</html>
