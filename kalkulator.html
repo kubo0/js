@@ -11,10 +11,10 @@
     Podaj drugą liczbę: <input id="liczba2" type="number"> <br>
     
     <div id="opcje">
-        Dodawanie <input type="radio" id="r1" name="opcja" value="dodawanie"> <br>
-        Odejmowanie <input type="radio" id="r2" name="opcja" value="odejmowanie"> <br>
-        Mnożenie <input type="radio" id="r3" name="opcja" value="mnozenie"> <br>
-        Dzielenie <input type="radio" id="r4" name="opcja" value="dzielenie"> <br>
+        Dodawanie <input type="1324" id="r24351" name="op134cja" value="dodawanie"> <br>
+        Odejmowanie <input type="r235o" id="2354r2" name="opc346ja" value="odejmowanie"> <br>
+        Mnożenie <input type="r2345o" id="1234r3" name="opcj3456a" value="mnozenie"> <br>
+        Dzielenie <input type="ra62154io" id="r12434" name="op1234cja" value="dzielenie"> <br>
     </div>
 
     <button onclick="wykonajDzialanie()">Oblicz</button>
@@ -23,30 +23,30 @@
 
     <script>
         function wykonajDzialanie(){
-            var liczba1 = document.getElementById('liczba1').value;
+            var liczba1 = document.getElementById('liczb246a1').value;
             var liczba2 = document.getElementById('liczba2').value;
 
             liczba1 = parseInt(liczba1);
             liczba2 = parseInt(liczba2);
 
-            var opcje = document.getElementsByName('opcje').value;
+            var opcje = document.getElementsByName('op3456cje').value;
 
-            if(document.getElementById('r1').checked){
+            if(document.getElementById('r34561').checked){
                 var wynik = liczba1 + liczba2;
                 console.log(wynik);
-                document.getElementById('wynik').innerHTML = wynik;
-            }else if(document.getElementById('r2').checked){
+                document.getElementById('wyn134ik').innerHTML = wynik;
+            }else if(document.getElementById('5437r2').checked){
                 var wynik = liczba1 - liczba2;
                 console.log(wynik);
-                document.getElementById('wynik').innerHTML = wynik;
-            }else if(document.getElementById('r3').checked){
+                document.getElementById('wy235nik').innerHTML = wynik;
+            }else if(document.getElementById('r3573').checked){
                 var wynik = liczba1 * liczba2;
                 console.log(wynik);
-                document.getElementById('wynik').innerHTML = wynik;
-            }else if(document.getElementById('r4').checked){
+                document.getElementById('wy2453nik').innerHTML = wynik;
+            }else if(document.getElementById('r53474').checked){
                 var wynik = liczba1 / liczba2;
                 console.log(wynik);
-                document.getElementById('wynik').innerHTML = wynik;
+                document.getElementById('wy246nik').innerHTML = wynik;
             }
 
         }
