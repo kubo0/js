@@ -7,17 +7,27 @@
     <title>Document</title>
 </head>
 <body onkeydown="changeDirection(event)">
-    <canvas id="c" width="800" height="600" style="border: 1px solid;"></canvas>
-    <p id="punkty">Wynik: 0</p>
+    <div style="text-align: center;">
+        <canvas id="c" width="800" height="600" style="border: 1px solid; text-align: center;"></canvas>
+    </div>
+    <h1 id="punkty" style="text-align: center;">Wynik: 0</h1>
     <script>
         var canvas = document.getElementById('c');
         var ctx = canvas.getContext('2d');
         var snake = Array(
-            {x:400, y:300},
-            {x:390, y:300},
-            {x:380, y:300},
-            {x:370, y:300},
-        );
+                {x:400, y:300},
+                {x:390, y:300},
+                {x:380, y:300},
+                {x:370, y:300},
+            );
+        function spawn() {
+            snake = Array(
+                {x:400, y:300},
+                {x:390, y:300},
+                {x:380, y:300},
+                {x:370, y:300},
+            );
+        }
         var jedzenie = {x:300, y: 200};
         spawnFood();
         var kierunek = "prawo";
@@ -25,7 +35,6 @@
         setInterval("gameLoop()", 50);
 
         function changeDirection(e){
-            //console.log(e);
             switch(e.key){
                 case "w":
                 kierunek = "gora";
@@ -58,11 +67,10 @@
         }
 
         function gameLoop(){
-            ctx.fillStyle = "#FFFFFF";
+            ctx.fillStyle = "#7a2d00";
             ctx.fillRect(0,0,800,600);
 
             if(snake[0].x == jedzenie.x && snake[0].y == jedzenie.y){
-                //jemy jedzenie
                 punkty++;
                 document.getElementById('punkty').innerHTML = "Wynik: " + punkty;
                 spawnFood();
@@ -75,56 +83,35 @@
 
             switch (kierunek){
                 case "dol":
-                //snake.y += 10;
                 gloway += 10;
                 break;
                 case "gora":
-                //snake.y -= 10;
                 gloway -= 10;
                 break;
                 case "lewo":
-                //snake.x -= 10;
                 glowax -= 10;
                 break;
                 case "prawo":
-                //snake.x += 10;
                 glowax += 10;
                 break;
             }
             var nowaGlowa = {x: glowax, y: gloway};
-            console.log(nowaGlowa);
             snake.unshift(nowaGlowa);
-            
-            //rysowanie weza
-            ctx.fillStyle = "#000000";
+
+            ctx.fillStyle = "#219900";
             for(var i = 0; i < snake.length; i++){
                 ctx.fillRect(snake[i].x, snake[i].y, 10, 10);
             }
             
-            //rysowanie jedzenia
-            ctx.fillStyle = "#FF0000";
+            ctx.fillStyle = "#fad900";
             ctx.fillRect(jedzenie.x, jedzenie.y, 10, 10);
 
-            //sprawdzanie kolizii
             if(snake[0].y < 0 || snake[0].y >= 600 || snake[0].x < 0 || snake[0].x >= 800){
                 alert("Przegrałeś.");
-                snake = Array(
-                    {x:400, y:300},
-                    {x:390, y:300},
-                    {x:380, y:300},
-                    {x:370, y:300},
-                );
+                spawn();
             }
 
-            if(snake.includes(snake[0],1)){
-                alert("Przegrałeś, wpadłeś na swój ogon.");
-                snake = Array(
-                    {x:400, y:300},
-                    {x:390, y:300},
-                    {x:380, y:300},
-                    {x:370, y:300},
-                );
-            }
+
         }
     
     </script>
