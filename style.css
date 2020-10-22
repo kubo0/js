@@ -1,0 +1,20 @@
+header{
+    text-align: center;
+    background-color: aqua;
+}
+aside, article{
+    float: left;
+}
+aside{
+    width: 25%;
+    background-color: brown;
+}
+article{
+    width: 75%;
+    background-color: cornflowerblue;
+}
+footer{
+    text-align: right;
+    clear: both;
+    background-color: darkcyan;
+}
